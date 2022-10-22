@@ -1,13 +1,3 @@
---Silent Aim
-
-loadstring(game:HttpGet("https://pastebin.com/raw/SbtCNZg7"))()
-DaHoodSettings.Prediction = 0.12567724521
-Aiming.TargetPart = {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
-Aiming.FOV = 9.4
-Aiming.FOVSides = 25
-Aiming.HitChance = 85
-Aiming.ShowFOV = false
-
 --CamLock
 
 getgenv().RecurringPoint = "UpperTorso"     -- ANother Hitbox
