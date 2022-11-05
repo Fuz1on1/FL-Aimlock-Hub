@@ -1,0 +1,250 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local LegitCamlock = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local LegitSilentAim = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_7 = Instance.new("UICorner")
+local TextButton_3 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local TextButton_4 = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local TacoShopTeleport = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local RevolverTeleport = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextButton_5 = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local TextButton_6 = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.0304568224, 0, 0.0733104348, 0)
+Frame.Size = UDim2.new(0, 445, 0, 584)
+Frame.Active = true
+Frame.Draggable = true
+
+UICorner.Parent = Frame
+
+LegitCamlock.Name = "Legit Camlock"
+LegitCamlock.Parent = Frame
+LegitCamlock.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+LegitCamlock.BorderColor3 = Color3.fromRGB(255, 255, 255)
+LegitCamlock.Position = UDim2.new(0.0314606726, 0, 0.135273993, 0)
+LegitCamlock.Size = UDim2.new(0, 200, 0, 50)
+LegitCamlock.Font = Enum.Font.LuckiestGuy
+LegitCamlock.Text = "CAm lock only"
+LegitCamlock.TextColor3 = Color3.fromRGB(147, 0, 0)
+LegitCamlock.TextSize = 14.000
+LegitCamlock.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Tenkai%20Streamable",true))();
+end)
+
+UICorner_2.Parent = LegitCamlock
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Position = UDim2.new(0.0314606726, 0, 0.0256849322, 0)
+TextLabel.Size = UDim2.new(0, 413, 0, 50)
+TextLabel.Font = Enum.Font.LuckiestGuy
+TextLabel.Text = "FL Aimlock Hub"
+TextLabel.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextLabel.TextSize = 14.000
+
+UICorner_3.Parent = TextLabel
+
+LegitSilentAim.Name = "Legit Silent Aim"
+LegitSilentAim.Parent = Frame
+LegitSilentAim.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+LegitSilentAim.BorderColor3 = Color3.fromRGB(255, 255, 255)
+LegitSilentAim.Position = UDim2.new(0.510112345, 0, 0.135273993, 0)
+LegitSilentAim.Size = UDim2.new(0, 200, 0, 50)
+LegitSilentAim.Font = Enum.Font.LuckiestGuy
+LegitSilentAim.Text = "Camlock + silent aim"
+LegitSilentAim.TextColor3 = Color3.fromRGB(147, 0, 0)
+LegitSilentAim.TextSize = 14.000
+LegitSilentAim.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Silent%20aim%20%2B%20camlock",true))();
+end)
+
+UICorner_4.Parent = LegitSilentAim
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.0314606726, 0, 0.231164396, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.LuckiestGuy
+TextButton.Text = "Zombie Animation"
+TextButton.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Zombie%20Animation",true))();
+end)
+
+UICorner_5.Parent = TextButton
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextButton_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.Position = UDim2.new(0.510112345, 0, 0.231164411, 0)
+TextButton_2.Size = UDim2.new(0, 200, 0, 50)
+TextButton_2.Font = Enum.Font.LuckiestGuy
+TextButton_2.Text = "No Jump Cooldown"
+TextButton_2.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextButton_2.TextSize = 14.000
+TextLabel_2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/No%20Jump%20Cooldown",true))();
+end)
+
+UICorner_6.Parent = TextButton_2
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextLabel_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.Position = UDim2.new(0.0359550565, 0, 0.909246564, 0)
+TextLabel_2.Size = UDim2.new(0, 413, 0, 42)
+TextLabel_2.Font = Enum.Font.LuckiestGuy
+TextLabel_2.Text = "Made By Freddie#2661"
+TextLabel_2.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+UICorner_7.Parent = TextLabel_2
+
+TextButton_3.Parent = Frame
+TextButton_3.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextButton_3.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.Position = UDim2.new(0.510112345, 0, 0.714041054, 0)
+TextButton_3.Size = UDim2.new(0, 200, 0, 50)
+TextButton_3.Font = Enum.Font.LuckiestGuy
+TextButton_3.Text = "CFrame"
+TextButton_3.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextButton_3.TextSize = 14.000
+TextButton_3.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/C%20Frame",true))();
+end)
+
+UICorner_8.Parent = TextButton_3
+
+TextButton_4.Parent = Frame
+TextButton_4.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextButton_4.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.Position = UDim2.new(0.0314606726, 0, 0.714041054, 0)
+TextButton_4.Size = UDim2.new(0, 200, 0, 50)
+TextButton_4.Font = Enum.Font.LuckiestGuy
+TextButton_4.Text = "Fly"
+TextButton_4.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextButton_4.TextSize = 14.000
+TextButton_4.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Fly%20(X)",true))();
+end)
+
+UICorner_9.Parent = TextButton_4
+
+TacoShopTeleport.Name = "Taco Shop Teleport"
+TacoShopTeleport.Parent = Frame
+TacoShopTeleport.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TacoShopTeleport.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TacoShopTeleport.Position = UDim2.new(0.0314606726, 0, 0.809931457, 0)
+TacoShopTeleport.Size = UDim2.new(0, 200, 0, 50)
+TacoShopTeleport.Font = Enum.Font.LuckiestGuy
+TacoShopTeleport.Text = "Taco Shop Teleport"
+TacoShopTeleport.TextColor3 = Color3.fromRGB(147, 0, 0)
+TacoShopTeleport.TextSize = 14.000
+TacoShopTeleport.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(575.484741, 74.0570068, -509.887054, 0.999999166, -2.14755232e-12, -0.00130374334, 4.90762075e-12, 1, 2.11703055e-09, 0.00130374334, -2.11703499e-09, 0.999999166)
+end)
+
+UICorner_10.Parent = TacoShopTeleport
+
+RevolverTeleport.Name = "Revolver Teleport"
+RevolverTeleport.Parent = Frame
+RevolverTeleport.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+RevolverTeleport.BorderColor3 = Color3.fromRGB(255, 255, 255)
+RevolverTeleport.Position = UDim2.new(0.510112345, 0, 0.809931457, 0)
+RevolverTeleport.Size = UDim2.new(0, 200, 0, 50)
+RevolverTeleport.Font = Enum.Font.LuckiestGuy
+RevolverTeleport.Text = "Revolver Teleport"
+RevolverTeleport.TextColor3 = Color3.fromRGB(147, 0, 0)
+RevolverTeleport.TextSize = 14.000
+RevolverTeleport.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-673.597778, 47.2757416, -146.78067, 0.0163797997, 1.94381027e-08, -0.99986583, 2.94266851e-08, 1, 1.99227781e-08, 0.99986583, -2.9749069e-08, 0.0163797997)
+end)
+
+UICorner_11.Parent = RevolverTeleport
+
+TextLabel_3.Archivable = false
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(147, 0, 0)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.159550563, 0, 0.39041096, 0)
+TextLabel_3.Size = UDim2.new(0, 299, 0, 112)
+TextLabel_3.Font = Enum.Font.LuckiestGuy
+TextLabel_3.Text = "FL"
+TextLabel_3.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextLabel_3.TextSize = 100.000
+TextLabel_3.TextStrokeColor3 = Color3.fromRGB(147, 0, 0)
+
+TextButton_5.Parent = Frame
+TextButton_5.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextButton_5.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.Position = UDim2.new(0.0314606726, 0, 0.616438389, 0)
+TextButton_5.Size = UDim2.new(0, 200, 0, 50)
+TextButton_5.Font = Enum.Font.LuckiestGuy
+TextButton_5.Text = "Red dot lock"
+TextButton_5.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextButton_5.TextSize = 14.000
+TextButton_5.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Red%20Dot%20Lock",true))();
+end)
+
+UICorner_12.Parent = TextButton_5
+
+TextButton_6.Parent = Frame
+TextButton_6.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+TextButton_6.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_6.Position = UDim2.new(0.510112345, 0, 0.616438389, 0)
+TextButton_6.Size = UDim2.new(0, 200, 0, 50)
+TextButton_6.Font = Enum.Font.LuckiestGuy
+TextButton_6.Text = "thusky lock"
+TextButton_6.TextColor3 = Color3.fromRGB(147, 0, 0)
+TextButton_6.TextSize = 14.000
+TextButton_6.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Thusky%20Dot%20Lock",true))();
+end)
+
+UICorner_13.Parent = TextButton_6
+
+-- Scripts:
+
+local function MZUDL_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	player = game.Players.LocalPlayer
+	
+	player:GetMouse().KeyDown:Connect(function(key)
+		if key == "v" and script.Parent.Visible == false then
+			script.Parent.Visible = true
+		else
+			if key == "v" and script.Parent.Visible == true then
+				script.Parent.Visible = false
+			end
+		end
+	end)
+end
+coroutine.wrap(MZUDL_fake_script)()
