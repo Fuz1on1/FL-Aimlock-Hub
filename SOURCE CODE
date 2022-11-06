@@ -3,29 +3,30 @@ local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local LegitCamlock = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
 local UICorner_3 = Instance.new("UICorner")
 local LegitSilentAim = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
+local ZombieAnimation = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
-local TextButton_2 = Instance.new("TextButton")
+local NoJumpCooldown = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
+local Credits = Instance.new("TextLabel")
 local UICorner_7 = Instance.new("UICorner")
-local TextButton_3 = Instance.new("TextButton")
+local Cframe = Instance.new("TextButton")
 local UICorner_8 = Instance.new("UICorner")
-local TextButton_4 = Instance.new("TextButton")
+local FlyX = Instance.new("TextButton")
 local UICorner_9 = Instance.new("UICorner")
 local TacoShopTeleport = Instance.new("TextButton")
 local UICorner_10 = Instance.new("UICorner")
 local RevolverTeleport = Instance.new("TextButton")
 local UICorner_11 = Instance.new("UICorner")
-local TextLabel_3 = Instance.new("TextLabel")
-local TextButton_5 = Instance.new("TextButton")
+local RedDotLock = Instance.new("TextButton")
 local UICorner_12 = Instance.new("UICorner")
-local TextButton_6 = Instance.new("TextButton")
+local ThuskyLock = Instance.new("TextButton")
 local UICorner_13 = Instance.new("UICorner")
+local FLOGO = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
 
 --Properties:
 
@@ -47,26 +48,45 @@ LegitCamlock.BorderColor3 = Color3.fromRGB(255, 255, 255)
 LegitCamlock.Position = UDim2.new(0.0314606726, 0, 0.135273993, 0)
 LegitCamlock.Size = UDim2.new(0, 200, 0, 50)
 LegitCamlock.Font = Enum.Font.LuckiestGuy
-LegitCamlock.Text = "CAm lock only"
+LegitCamlock.Text = "Cam lock only"
 LegitCamlock.TextColor3 = Color3.fromRGB(147, 0, 0)
 LegitCamlock.TextSize = 14.000
 LegitCamlock.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Tenkai%20Streamable",true))();
+	--CamLock
+
+	getgenv().RecurringPoint = "UpperTorso"     -- ANother Hitbox
+	getgenv().Hitbox = "UpperTorso"     -- Hitbox 
+	getgenv().Keybind = "q"     -- Toggle/untoggle
+	getgenv().AimbotStrengthAmount = 0.03      -- Tracing : 900-500 or less for tracing, Pure Aimbot : 1.200 or 1.000
+	getgenv().PredictionAmount = 10     -- 300-350 ping : 2.5, 2.3 or less | 200-250 ping : 3-3.5
+	getgenv().Radius = 25               -- At how near the cursor goes the easier you can toggle the Key.
+	getgenv().UsePrediction = true      -- Prediction nor no prediction
+	getgenv().AimbotStrength = true     -- Strength or no Strength
+	getgenv().FirstPerson = true
+	getgenv().ThirdPerson = true
+	getgenv().TeamCheck = false
+	getgenv().Enabled = true            -- Main Enabling shit
+
+
+	-- // main script  / / -- 
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/tenaaki/GenericAimbot/main/v1.0.0"))()
 end)
 
 UICorner_2.Parent = LegitCamlock
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.Position = UDim2.new(0.0314606726, 0, 0.0256849322, 0)
-TextLabel.Size = UDim2.new(0, 413, 0, 50)
-TextLabel.Font = Enum.Font.LuckiestGuy
-TextLabel.Text = "FL Aimlock Hub"
-TextLabel.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextLabel.TextSize = 14.000
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Title.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Title.Position = UDim2.new(0.0314606726, 0, 0.0256849322, 0)
+Title.Size = UDim2.new(0, 413, 0, 50)
+Title.Font = Enum.Font.LuckiestGuy
+Title.Text = "FL Aimlock Hub"
+Title.TextColor3 = Color3.fromRGB(147, 0, 0)
+Title.TextSize = 14.000
 
-UICorner_3.Parent = TextLabel
+UICorner_3.Parent = Title
 
 LegitSilentAim.Name = "Legit Silent Aim"
 LegitSilentAim.Parent = Frame
@@ -79,82 +99,512 @@ LegitSilentAim.Text = "Camlock + silent aim"
 LegitSilentAim.TextColor3 = Color3.fromRGB(147, 0, 0)
 LegitSilentAim.TextSize = 14.000
 LegitSilentAim.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Silent%20aim%20%2B%20camlock",true))();
+	--KEYBIND FOR SMOOTHING LOCK IS Q, THIS MAKES STREAMABLE ALOT BETTER!
+
+	local hotkey = 't' -- DONT CHANGE!
+	local mouse = game.Players.LocalPlayer:GetMouse()
+
+	mouse.KeyDown:Connect(function(key)
+		if key == hotkey then
+			if getgenv().ValiantAimHacks.SilentAimEnabled == true then
+				getgenv().ValiantAimHacks.SilentAimEnabled = false
+			else
+				getgenv().ValiantAimHacks.SilentAimEnabled = true
+			end
+		end
+	end)
+
+	-- // Services
+	local Players = game:GetService("Players")
+
+	-- // Vars
+	local LocalPlayer = Players.LocalPlayer
+	local accomidationfactor = 0.11
+
+	-- // Silent Aim Module
+	local SilentAim = loadstring(game:HttpGet("https://pastebin.com/raw/2f0mGbMP"))()
+	SilentAim.TeamCheck = false
+	-- // Metatable vars
+	local mt = getrawmetatable(game)
+	local backupindex = mt.__index
+	setreadonly(mt, false)
+
+	-- // Check if player is down
+	SilentAim.checkSilentAim = function()
+		local checkA = (SilentAim.SilentAimEnabled == true and SilentAim.Selected ~= LocalPlayer)
+		local playerCharacter = SilentAim.Selected.Character
+		local daHood = (playerCharacter.BodyEffects["K.O"].Value == false or playerCharacter:FindFirstChild("GRABBING_CONSTRAINT") ~= nil)
+
+		return (checkA and daHood)
+	end
+
+	-- // Hook
+	mt.__index = newcclosure(function(t, k)
+		if (t:IsA("Mouse") and (k == "Hit")) then
+			print(t, k)
+			local CPlayer = SilentAim.Selected
+			if (SilentAim.checkSilentAim()) then
+				if (CPlayer.Character:FindFirstChild("HumanoidRootPart")) then
+					return {p=(CPlayer.Character.HumanoidRootPart.CFrame.p+(CPlayer.Character.HumanoidRootPart.Velocity*accomidationfactor))}
+				end
+			end
+		end
+		return backupindex(t, k)
+	end)
+
+	-- // Revert
+	setreadonly(mt, true)
+
+
+	-- cam lock i used in the video 
+	getgenv().OldAimPart = "UpperTorso"
+	getgenv().AimPart = "UpperTorso" 
+	getgenv().AimlockKey = "q"
+	getgenv().AimRadius = 7.22
+	getgenv().ThirdPerson = true 
+	getgenv().FirstPerson = true
+	getgenv().TeamCheck = false 
+	getgenv().PredictMovement = true
+	getgenv().PredictionVelocity = 25
+	getgenv().CheckIfJumped = true
+	getgenv().Smoothness = true
+	getgenv().SmoothnessAmount = 0.0141
+
+	local Players, Uis, RService, SGui = game:GetService"Players", game:GetService"UserInputService", game:GetService"RunService", game:GetService"StarterGui";
+	local Client, Mouse, Camera, CF, RNew, Vec3, Vec2 = Players.LocalPlayer, Players.LocalPlayer:GetMouse(), workspace.CurrentCamera, CFrame.new, Ray.new, Vector3.new, Vector2.new;
+	local Aimlock, MousePressed, CanNotify = true, false, false;
+	local AimlockTarget;
+	local OldPre;
+
+
+
+	getgenv().WorldToViewportPoint = function(P)
+		return Camera:WorldToViewportPoint(P)
+	end
+
+	getgenv().WorldToScreenPoint = function(P)
+		return Camera.WorldToScreenPoint(Camera, P)
+	end
+
+	getgenv().GetObscuringObjects = function(T)
+		if T and T:FindFirstChild(getgenv().AimPart) and Client and Client.Character:FindFirstChild("Head") then 
+			local RayPos = workspace:FindPartOnRay(RNew(
+				T[getgenv().AimPart].Position, Client.Character.Head.Position)
+			)
+			if RayPos then return RayPos:IsDescendantOf(T) end
+		end
+	end
+
+	getgenv().GetNearestTarget = function()
+		local players = {}
+		local PLAYER_HOLD  = {}
+		local DISTANCES = {}
+		for i, v in pairs(Players:GetPlayers()) do
+			if v ~= Client then
+				table.insert(players, v)
+			end
+		end
+		for i, v in pairs(players) do
+			if v.Character ~= nil then
+				local AIM = v.Character:FindFirstChild("Head")
+				if getgenv().TeamCheck == true and v.Team ~= Client.Team then
+					local DISTANCE = (v.Character:FindFirstChild("Head").Position - game.Workspace.CurrentCamera.CFrame.p).magnitude
+					local RAY = Ray.new(game.Workspace.CurrentCamera.CFrame.p, (Mouse.Hit.p - game.Workspace.CurrentCamera.CFrame.p).unit * DISTANCE)
+					local HIT,POS = game.Workspace:FindPartOnRay(RAY, game.Workspace)
+					local DIFF = math.floor((POS - AIM.Position).magnitude)
+					PLAYER_HOLD[v.Name .. i] = {}
+					PLAYER_HOLD[v.Name .. i].dist= DISTANCE
+					PLAYER_HOLD[v.Name .. i].plr = v
+					PLAYER_HOLD[v.Name .. i].diff = DIFF
+					table.insert(DISTANCES, DIFF)
+				elseif getgenv().TeamCheck == false and v.Team == Client.Team then 
+					local DISTANCE = (v.Character:FindFirstChild("Head").Position - game.Workspace.CurrentCamera.CFrame.p).magnitude
+					local RAY = Ray.new(game.Workspace.CurrentCamera.CFrame.p, (Mouse.Hit.p - game.Workspace.CurrentCamera.CFrame.p).unit * DISTANCE)
+					local HIT,POS = game.Workspace:FindPartOnRay(RAY, game.Workspace)
+					local DIFF = math.floor((POS - AIM.Position).magnitude)
+					PLAYER_HOLD[v.Name .. i] = {}
+					PLAYER_HOLD[v.Name .. i].dist= DISTANCE
+					PLAYER_HOLD[v.Name .. i].plr = v
+					PLAYER_HOLD[v.Name .. i].diff = DIFF
+					table.insert(DISTANCES, DIFF)
+				end
+			end
+		end
+
+		if unpack(DISTANCES) == nil then
+			return nil
+		end
+
+		local L_DISTANCE = math.floor(math.min(unpack(DISTANCES)))
+		if L_DISTANCE > getgenv().AimRadius then
+			return nil
+		end
+
+		for i, v in pairs(PLAYER_HOLD) do
+			if v.diff == L_DISTANCE then
+				return v.plr
+			end
+		end
+		return nil
+	end
+
+	Mouse.KeyDown:Connect(function(a)
+		if not (Uis:GetFocusedTextBox()) then 
+			if a == AimlockKey and AimlockTarget == nil then
+				pcall(function()
+					if MousePressed ~= true then MousePressed = true end 
+					local Target;Target = GetNearestTarget()
+					if Target ~= nil then 
+						AimlockTarget = Target
+					end
+				end)
+			elseif a == AimlockKey and AimlockTarget ~= nil then
+				if AimlockTarget ~= nil then AimlockTarget = nil end
+				if MousePressed ~= false then 
+					MousePressed = false 
+				end
+			end
+		end
+	end)
+
+	RService.RenderStepped:Connect(function()
+		if getgenv().ThirdPerson == true and getgenv().FirstPerson == true then 
+			if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude > 1 or (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude <= 1 then 
+				CanNotify = true 
+			else 
+				CanNotify = false 
+			end
+		elseif getgenv().ThirdPerson == true and getgenv().FirstPerson == false then 
+			if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude > 1 then 
+				CanNotify = true 
+			else 
+				CanNotify = false 
+			end
+		elseif getgenv().ThirdPerson == false and getgenv().FirstPerson == true then 
+			if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude <= 1 then 
+				CanNotify = true 
+			else 
+				CanNotify = false 
+			end
+		end
+		if Aimlock == true and MousePressed == true then 
+			if AimlockTarget and AimlockTarget.Character and AimlockTarget.Character:FindFirstChild(getgenv().AimPart) then 
+				if getgenv().FirstPerson == true then
+					if CanNotify == true then
+						if getgenv().PredictMovement == true then
+							if getgenv().Smoothness == true then
+								--// The part we're going to lerp/smoothen \\--
+								local Main = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity)
+
+								--// Making it work \\--
+								Camera.CFrame = Camera.CFrame:Lerp(Main, getgenv().SmoothnessAmount, Enum.EasingStyle.Elastic, Enum.EasingDirection.InOut)
+							else
+								Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position + AimlockTarget.Character[getgenv().AimPart].Velocity/PredictionVelocity)
+							end
+						elseif getgenv().PredictMovement == false then 
+							if getgenv().Smoothness == true then
+								--// The part we're going to lerp/smoothen \\--
+								local Main = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position)
+
+								--// Making it work \\--
+								Camera.CFrame = Camera.CFrame:Lerp(Main, getgenv().SmoothnessAmount, Enum.EasingStyle.Elastic, Enum.EasingDirection.InOut)
+							else
+								Camera.CFrame = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position)
+							end
+						end
+					end
+				end
+			end
+		end
+		if CheckIfJumped == true then
+			if AimlockTarget.Character.HuDDDDDDDDDDWmanoid.FloorMaterial == Enum.Material.Air then
+
+				getgenv().AimPart = "UpperTorso"
+			else
+				getgenv().AimPart = getgenv().OldAimPart
+
+			end
+		end
+	end)
 end)
 
 UICorner_4.Parent = LegitSilentAim
 
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.0314606726, 0, 0.231164396, 0)
-TextButton.Size = UDim2.new(0, 200, 0, 50)
-TextButton.Font = Enum.Font.LuckiestGuy
-TextButton.Text = "Zombie Animation"
-TextButton.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextButton.TextSize = 14.000
-TextButton.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Zombie%20Animation",true))();
+ZombieAnimation.Name = "Zombie Animation"
+ZombieAnimation.Parent = Frame
+ZombieAnimation.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+ZombieAnimation.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ZombieAnimation.Position = UDim2.new(0.0314606726, 0, 0.231164396, 0)
+ZombieAnimation.Size = UDim2.new(0, 200, 0, 50)
+ZombieAnimation.Font = Enum.Font.LuckiestGuy
+ZombieAnimation.Text = "Zombie Animation"
+ZombieAnimation.TextColor3 = Color3.fromRGB(147, 0, 0)
+ZombieAnimation.TextSize = 14.000
+ZombieAnimation.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
 end)
 
-UICorner_5.Parent = TextButton
+UICorner_5.Parent = ZombieAnimation
 
-TextButton_2.Parent = Frame
-TextButton_2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextButton_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.Position = UDim2.new(0.510112345, 0, 0.231164411, 0)
-TextButton_2.Size = UDim2.new(0, 200, 0, 50)
-TextButton_2.Font = Enum.Font.LuckiestGuy
-TextButton_2.Text = "No Jump Cooldown"
-TextButton_2.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextButton_2.TextSize = 14.000
-TextLabel_2.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/No%20Jump%20Cooldown",true))();
+NoJumpCooldown.Name = "No Jump Cooldown"
+NoJumpCooldown.Parent = Frame
+NoJumpCooldown.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+NoJumpCooldown.BorderColor3 = Color3.fromRGB(255, 255, 255)
+NoJumpCooldown.Position = UDim2.new(0.510112345, 0, 0.231164411, 0)
+NoJumpCooldown.Size = UDim2.new(0, 200, 0, 50)
+NoJumpCooldown.Font = Enum.Font.LuckiestGuy
+NoJumpCooldown.Text = "No Jump Cooldown"
+NoJumpCooldown.TextColor3 = Color3.fromRGB(147, 0, 0)
+NoJumpCooldown.TextSize = 14.000
+NoJumpCooldown.MouseButton1Down:connect(function()
+	--supports auto execute just put it in auto exc folder as a .txt
+	if not game.IsLoaded(game) then 
+		game.Loaded.Wait(game.Loaded);
+	end
+
+	local IsA = game.IsA;
+	local newindex = nil 
+
+	newindex = hookmetamethod(game, "__newindex", function(self, Index, Value)
+		if not checkcaller() and IsA(self, "Humanoid") and Index == "JumpPower" then 
+			return
+		end
+
+		return newindex(self, Index, Value);
+	end)
 end)
 
-UICorner_6.Parent = TextButton_2
+UICorner_6.Parent = NoJumpCooldown
 
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextLabel_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.Position = UDim2.new(0.0359550565, 0, 0.909246564, 0)
-TextLabel_2.Size = UDim2.new(0, 413, 0, 42)
-TextLabel_2.Font = Enum.Font.LuckiestGuy
-TextLabel_2.Text = "Made By Freddie#2661"
-TextLabel_2.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextLabel_2.TextSize = 14.000
+Credits.Name = "Credits"
+Credits.Parent = Frame
+Credits.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Credits.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Credits.Position = UDim2.new(0.0359550565, 0, 0.909246564, 0)
+Credits.Size = UDim2.new(0, 413, 0, 42)
+Credits.Font = Enum.Font.LuckiestGuy
+Credits.Text = "Made By Freddie#2661"
+Credits.TextColor3 = Color3.fromRGB(147, 0, 0)
+Credits.TextSize = 14.000
 
-UICorner_7.Parent = TextLabel_2
+UICorner_7.Parent = Credits
 
-TextButton_3.Parent = Frame
-TextButton_3.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextButton_3.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_3.Position = UDim2.new(0.510112345, 0, 0.714041054, 0)
-TextButton_3.Size = UDim2.new(0, 200, 0, 50)
-TextButton_3.Font = Enum.Font.LuckiestGuy
-TextButton_3.Text = "CFrame"
-TextButton_3.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextButton_3.TextSize = 14.000
-TextButton_3.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/C%20Frame",true))();
+Cframe.Name = "Cframe"
+Cframe.Parent = Frame
+Cframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Cframe.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Cframe.Position = UDim2.new(0.510112345, 0, 0.714041054, 0)
+Cframe.Size = UDim2.new(0, 200, 0, 50)
+Cframe.Font = Enum.Font.LuckiestGuy
+Cframe.Text = "CFrame"
+Cframe.TextColor3 = Color3.fromRGB(147, 0, 0)
+Cframe.TextSize = 14.000
+Cframe.MouseButton1Down:connect(function()
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+	local Window = Library.CreateLib("Speed", "DarkTheme")
+
+	local speed = Window:NewTab("Speed")
+	local rs = speed:NewSection("CFrame Speed")
+	rs:NewButton("CFrame Guns FIX", "ButtonInfo", function()
+		for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Script") and v.Name ~= "Health" and v.Name ~= "Sound" and v:FindFirstChild("LocalScript") then
+				v:Destroy()
+			end
+		end
+		game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+			repeat
+				wait()
+			until game.Players.LocalPlayer.Character
+			char.ChildAdded:Connect(function(child)
+				if child:IsA("Script") then 
+					wait(0.1)
+					if child:FindFirstChild("LocalScript") then
+						child.LocalScript:FireServer()
+					end
+				end
+			end)
+		end)
+	end)
+	rs:NewButton("CFrame Speed (C)", "ButtonInfo", function()
+		repeat
+			wait()
+		until game:IsLoaded()
+		local L_134_ = game:service('Players')
+		local L_135_ = L_134_.LocalPlayer
+		repeat
+			wait()
+		until L_135_.Character
+		local L_136_ = game:service('UserInputService')
+		local L_137_ = game:service('RunService')
+		getgenv().Multiplier = 0.5
+		local L_138_ = true
+		local L_139_
+		L_136_.InputBegan:connect(function(L_140_arg0)
+			if L_140_arg0.KeyCode == Enum.KeyCode.LeftBracket then
+				Multiplier = Multiplier + 0.01
+				print(Multiplier)
+				wait(0.2)
+				while L_136_:IsKeyDown(Enum.KeyCode.LeftBracket) do
+					wait()
+					Multiplier = Multiplier + 0.01
+					print(Multiplier)
+				end
+			end
+			if L_140_arg0.KeyCode == Enum.KeyCode.RightBracket then
+				Multiplier = Multiplier - 0.01
+				print(Multiplier)
+				wait(0.2)
+				while L_136_:IsKeyDown(Enum.KeyCode.RightBracket) do
+					wait()
+					Multiplier = Multiplier - 0.01
+					print(Multiplier)
+				end
+			end
+			if L_140_arg0.KeyCode == Enum.KeyCode.C then
+				L_138_ = not L_138_
+				if L_138_ == true then
+					repeat
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * Multiplier
+						game:GetService("RunService").Stepped:wait()
+					until L_138_ == false
+				end
+			end
+		end)
+	end)
+	rs:NewSlider("CFrame Speed ", "SliderInfo", 5, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		getgenv().Multiplier = s
+	end)
+	rs:NewKeybind("Toggle UI", "KeybindInfo", Enum.KeyCode.v , function()
+		Library.ToggleUI()
+	end)
 end)
 
-UICorner_8.Parent = TextButton_3
+UICorner_8.Parent = Cframe
 
-TextButton_4.Parent = Frame
-TextButton_4.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextButton_4.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_4.Position = UDim2.new(0.0314606726, 0, 0.714041054, 0)
-TextButton_4.Size = UDim2.new(0, 200, 0, 50)
-TextButton_4.Font = Enum.Font.LuckiestGuy
-TextButton_4.Text = "Fly"
-TextButton_4.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextButton_4.TextSize = 14.000
-TextButton_4.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Fly%20(X)",true))();
+FlyX.Name = "Fly ( X )"
+FlyX.Parent = Frame
+FlyX.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+FlyX.BorderColor3 = Color3.fromRGB(255, 255, 255)
+FlyX.Position = UDim2.new(0.0314606726, 0, 0.714041054, 0)
+FlyX.Size = UDim2.new(0, 200, 0, 50)
+FlyX.Font = Enum.Font.LuckiestGuy
+FlyX.Text = "Fly  (X)"
+FlyX.TextColor3 = Color3.fromRGB(147, 0, 0)
+FlyX.TextSize = 14.000
+FlyX.MouseButton1Down:connect(function()
+	local plr = game.Players.LocalPlayer
+	local mouse = plr:GetMouse()
+	local Humanoid = game.Players.LocalPlayer.Character.Humanoid or game.Players.LocalPlayer.Character.humanoid  
+
+	localplayer = plr
+
+	if workspace:FindFirstChild("Core") then
+		workspace.Core:Destroy()
+	end
+
+	local Core = Instance.new("Part")
+	Core.Name = "Core"
+	Core.Size = Vector3.new(0.05, 0.05, 0.05)
+
+	spawn(function()
+		Core.Parent = workspace
+		local Weld = Instance.new("Weld", Core)
+		Weld.Part0 = Core
+		Weld.Part1 = localplayer.Character.LowerTorso
+		Weld.C0 = CFrame.new(0, 0, 0)
+	end)
+
+	workspace:WaitForChild("Core")
+
+	local torso = workspace.Core
+	flying = true
+	local speed=10
+	local keys={a=false,d=false,w=false,s=false} 
+	local e1
+	local e2
+	local function start()
+		local pos = Instance.new("BodyPosition",torso)
+		local gyro = Instance.new("BodyGyro",torso)
+		pos.Name="EPIXPOS"
+		pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+		pos.position = torso.Position
+		gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+		gyro.cframe = torso.CFrame
+		repeat
+			wait()
+			Humanoid.PlatformStand=true
+			local new=gyro.cframe - gyro.cframe.p + pos.position
+			if not keys.w and not keys.s and not keys.a and not keys.d then
+				speed=5
+			end
+			if keys.w then 
+				new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+				speed=speed+0
+			end
+			if keys.s then 
+				new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+				speed=speed+0
+			end
+			if keys.d then 
+				new = new * CFrame.new(speed,0,0)
+				speed=speed+0
+			end
+			if keys.a then 
+				new = new * CFrame.new(-speed,0,0)
+				speed=speed+0
+			end
+			if speed>10 then
+				speed=5
+			end
+			pos.position=new.p
+			if keys.w then
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*0),0,0)
+			elseif keys.s then
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*0),0,0)
+			else
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+			end
+		until flying == false
+		if gyro then gyro:Destroy() end
+		if pos then pos:Destroy() end
+		flying=false
+		Humanoid.PlatformStand=false
+		speed=10
+	end
+	e1=mouse.KeyDown:connect(function(key)
+		if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
+		if key=="w" then
+			keys.w=true
+		elseif key=="s" then
+			keys.s=true
+		elseif key=="a" then
+			keys.a=true
+		elseif key=="d" then
+			keys.d=true
+		elseif key=="x" then
+			if flying==true then
+				flying=false
+			else
+				flying=true
+				start()
+			end
+		end
+	end)
+	e2=mouse.KeyUp:connect(function(key)
+		if key=="w" then
+			keys.w=false
+		elseif key=="s" then
+			keys.s=false
+		elseif key=="a" then
+			keys.a=false
+		elseif key=="d" then
+			keys.d=false
+		end
+	end)
+	start()
 end)
 
-UICorner_9.Parent = TextButton_4
+UICorner_9.Parent = FlyX
 
 TacoShopTeleport.Name = "Taco Shop Teleport"
 TacoShopTeleport.Parent = Frame
@@ -188,51 +638,452 @@ end)
 
 UICorner_11.Parent = RevolverTeleport
 
-TextLabel_3.Archivable = false
-TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(147, 0, 0)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0.159550563, 0, 0.39041096, 0)
-TextLabel_3.Size = UDim2.new(0, 299, 0, 112)
-TextLabel_3.Font = Enum.Font.LuckiestGuy
-TextLabel_3.Text = "FL"
-TextLabel_3.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextLabel_3.TextSize = 100.000
-TextLabel_3.TextStrokeColor3 = Color3.fromRGB(147, 0, 0)
+RedDotLock.Name = "Red Dot Lock"
+RedDotLock.Parent = Frame
+RedDotLock.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+RedDotLock.BorderColor3 = Color3.fromRGB(255, 255, 255)
+RedDotLock.Position = UDim2.new(0.0314606726, 0, 0.616438389, 0)
+RedDotLock.Size = UDim2.new(0, 200, 0, 50)
+RedDotLock.Font = Enum.Font.LuckiestGuy
+RedDotLock.Text = "Red dot lock"
+RedDotLock.TextColor3 = Color3.fromRGB(147, 0, 0)
+RedDotLock.TextSize = 14.000
+RedDotLock.MouseButton1Down:connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "FL Aimlock";
+		Text = "Q To Toggle";
 
-TextButton_5.Parent = Frame
-TextButton_5.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextButton_5.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_5.Position = UDim2.new(0.0314606726, 0, 0.616438389, 0)
-TextButton_5.Size = UDim2.new(0, 200, 0, 50)
-TextButton_5.Font = Enum.Font.LuckiestGuy
-TextButton_5.Text = "Red dot lock"
-TextButton_5.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextButton_5.TextSize = 14.000
-TextButton_5.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Red%20Dot%20Lock",true))();
+	})
+	local CC = game:GetService"Workspace".CurrentCamera
+	local Plr
+	local enabled = falseWD
+	local accomidationfactor =  0.1377
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	local placemarker = Instance.new("Part", game.Workspace)
+
+	function makemarker(Parent, Adornee, Color, Size, Size2)
+		local e = Instance.new("BillboardGui", Parent)
+		e.Name = "PP"
+		e.Adornee = Adornee
+		e.Size = UDim2.new(Size, Size2, Size, Size2)
+		e.AlwaysOnTop = true
+		local a = Instance.new("Frame", e)
+		a.Size = UDim2.new(1, 0, 1, 0)
+		a.BackgroundTransparency = 0
+		a.BackgroundColor3 = Color
+		local g = Instance.new("UICorner", a)
+		g.CornerRadius = UDim.new(50, 50)
+		return(e)
+	end
+
+
+	local data = game.Players:GetPlayers()
+	function noob(player)
+		local character
+		repeat wait() until player.Character
+		local handler = makemarker(guimain, player.Character:WaitForChild("HumanoidRootPart"), Color3.fromRGB(107, 184, 255), 0.3, 3)
+		handler.Name = player.Name
+		player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild("HumanoidRootPart") end)
+
+
+		spawn(function()
+			while wait() do
+				if player.Character then
+					TextLabel.Text = player.Name..tostring(player:WaitForChild("leaderstats").Wanted.Value).." | "..tostring(math.floor(player.Character:WaitForChild("Humanoid").Health))
+				end
+			end
+		end)
+	end
+
+	for i = 1, #data do
+		if data[i] ~= game.Players.LocalPlayer then
+			noob(data[i])
+		end
+	end
+
+	game.Players.PlayerAdded:connect(function(Player)
+		noob(Player)
+	end)
+
+	spawn(function()
+		placemarker.Anchored = true
+		placemarker.CanCollide = false
+		placemarker.Size = Vector3.new(8, 8, 8)
+		placemarker.Transparency = 0.75
+		makemarker(placemarker, placemarker, Color3.fromRGB(255, 0, 0), 0.40, 0)
+	end)    
+
+	mouse.KeyDown:Connect(function(k)
+		if k ~= "q" then return end
+		if enabled then
+			enabled = false
+			guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		else
+			enabled = true 
+			Plr = getClosestPlayerToCursor()
+			guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end    
+	end)
+
+	function getClosestPlayerToCursor()
+		local closestPlayer
+		local shortestDistance = math.huge
+
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") then
+				local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
+			end
+		end
+		return closestPlayer
+	end
+
+	game:GetService"RunService".Stepped:connect(function()
+		if enabled and Plr.Character and Plr.Character:FindFirstChild("HumanoidRootPart") then
+			placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor))
+		else
+			placemarker.CFrame = CFrame.new(0, 9999, 0)
+		end
+	end)
+
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(...)
+		local args = {...}
+		if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
+			args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor)
+			return old(unpack(args))
+		end
+		return old(...)
+	end)
 end)
 
-UICorner_12.Parent = TextButton_5
+UICorner_12.Parent = RedDotLock
 
-TextButton_6.Parent = Frame
-TextButton_6.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextButton_6.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_6.Position = UDim2.new(0.510112345, 0, 0.616438389, 0)
-TextButton_6.Size = UDim2.new(0, 200, 0, 50)
-TextButton_6.Font = Enum.Font.LuckiestGuy
-TextButton_6.Text = "thusky lock"
-TextButton_6.TextColor3 = Color3.fromRGB(147, 0, 0)
-TextButton_6.TextSize = 14.000
-TextButton_6.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Fuz1on1/FL-Aimlock-Hub/main/Thusky%20Dot%20Lock",true))();
+ThuskyLock.Name = "Thusky Lock"
+ThuskyLock.Parent = Frame
+ThuskyLock.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+ThuskyLock.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ThuskyLock.Position = UDim2.new(0.510112345, 0, 0.616438389, 0)
+ThuskyLock.Size = UDim2.new(0, 200, 0, 50)
+ThuskyLock.Font = Enum.Font.LuckiestGuy
+ThuskyLock.Text = "thusky lock"
+ThuskyLock.TextColor3 = Color3.fromRGB(147, 0, 0)
+ThuskyLock.TextSize = 14.000
+ThuskyLock.MouseButton1Down:connect(function()
+	local Settings = {
+		rewrittenmain = {
+			Enabled = true,
+			Key = "q",
+			DOT = true,
+			AIRSHOT = true,
+			NOTIF = false,
+			AUTOPRED = false,
+			FOV = math.huge,
+			RESOVLER = false
+		}
+	}
+
+	local SelectedPart = "HumanoidRootPart"
+	local Prediction = true
+	local PredictionValue = 0.1413
+
+
+	local AnchorCount = 0
+	local MaxAnchor = 50
+
+	local CC = game:GetService"Workspace".CurrentCamera
+	local accomidationfactor = 0.11
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	local placemarker = Instance.new("Part", game.Workspace)
+	local enabled = false
+	local Plr
+
+	function makemarker(Parent, Adornee, Color, Size, Size2)
+		local e = Instance.new("BillboardGui", Parent)
+		e.Name = "PP"
+		e.Adornee = Adornee
+		e.Size = UDim2.new(Size, Size2, Size, Size2)
+		e.AlwaysOnTop = Settings.rewrittenmain.DOT
+		local a = Instance.new("Frame", e)
+		if Settings.rewrittenmain.DOT == true then
+			a.Size = UDim2.new(1, 0, 1, 0)
+		else
+			a.Size = UDim2.new(0, 0, 0, 0)
+		end
+		if Settings.rewrittenmain.DOT == true then
+			a.Transparency = 0
+			a.BackgroundTransparency = 0
+		else
+			a.Transparency = 1
+			a.BackgroundTransparency = 1
+		end
+		a.BackgroundColor3 = Color
+		local g = Instance.new("UICorner", a)
+		if Settings.rewrittenmain.DOT == false then
+			g.CornerRadius = UDim.new(0, 0)
+		else
+			g.CornerRadius = UDim.new(1, 1) 
+		end
+		return(e)
+	end
+
+
+	local data = game.Players:GetPlayers()
+	function noob(player)
+		local character
+		repeat wait() until player.Character
+		local handler = makemarker(guimain, player.Character:WaitForChild(SelectedPart), Color3.fromRGB(107, 184, 255), 0.3, 3)
+		handler.Name = player.Name
+		player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild(SelectedPart) end)
+
+
+		spawn(function()
+			while wait() do
+				if player.Character then
+				end
+			end
+		end)
+	end
+
+	for i = 1, #data do
+		if data[i] ~= game.Players.LocalPlayer then
+			noob(data[i])
+		end
+	end
+
+	game.Players.PlayerAdded:connect(function(Player)
+		noob(Player)
+	end)
+
+	spawn(function()
+		placemarker.Anchored = true
+		placemarker.CanCollide = false
+		if Settings.rewrittenmain.DOT == true then
+			placemarker.Size = Vector3.new(8, 8, 8)
+		else
+			placemarker.Size = Vector3.new(0, 0, 0)
+		end
+		placemarker.Transparency = 0.75
+		if Settings.rewrittenmain.DOT then
+			makemarker(placemarker, placemarker, Color3.fromRGB(232, 186, 200), 0.40, 0)
+		end
+	end)
+
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+		if k == Settings.rewrittenmain.Key and Settings.rewrittenmain.Enabled then
+			if enabled == true then
+				enabled = false
+				if Settings.rewrittenmain.NOTIF == true then
+					Plr = getClosestPlayerToCursor()
+					game.StarterGui:SetCore("SendNotification", {
+						Title = "";
+						Text = "Unlocked :)",
+						Duration = 5
+					})
+				end
+			else
+				Plr = getClosestPlayerToCursor()
+				enabled = true
+				if Settings.rewrittenmain.NOTIF == true then
+
+					game.StarterGui:SetCore("SendNotification", {
+						Title = "";
+						Text = "Target: "..tostring(Plr.Character.Humanoid.DisplayName),
+						Duration = 5
+					})
+
+				end
+			end
+		end
+	end)
+
+
+
+	function getClosestPlayerToCursor()
+		local closestPlayer
+		local shortestDistance = Settings.rewrittenmain.FOV
+
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") then
+				local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
+			end
+		end
+		return closestPlayer
+	end
+
+	local pingvalue = nil;
+	local split = nil;
+	local ping = nil;
+
+	game:GetService"RunService".Stepped:connect(function()
+		if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
+			placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor))
+		else
+			placemarker.CFrame = CFrame.new(0, 9999, 0)
+		end
+		if Settings.rewrittenmain.AUTOPRED == true then
+			pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+			split = string.split(pingvalue,'(')
+			ping = tonumber(split[1])
+			if ping < 130 then
+				PredictionValue = 0.151
+			elseif ping < 125 then
+				PredictionValue = 0.149
+			elseif ping < 110 then
+				PredictionValue = 0.146
+			elseif ping < 105 then
+				PredictionValue = 0.138
+			elseif ping < 90 then
+				PredictionValue = 0.136
+			elseif ping < 80 then
+				PredictionValue = 0.134
+			elseif ping < 70 then
+				PredictionValue = 0.131
+			elseif ping < 60 then
+				PredictionValue = 0.1229
+			elseif ping < 50 then
+				PredictionValue = 0.1225
+			elseif ping < 40 then
+				PredictionValue = 0.1256
+			end
+		end
+	end)
+
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(...)
+		local args = {...}
+		if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" and Settings.rewrittenmain.Enabled and Plr.Character ~= nil then
+
+			-- args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor)
+            --[[
+            if Settings.rewrittenmain.AIRSHOT == true then
+                if game.Workspace.Players[Plr.Name].Humanoid:GetState() == Enum.HumanoidStateType.Freefall then -- Plr.Character:WaitForChild("Humanoid"):GetState() == Enum.HumanoidStateType.Freefall
+                    
+                    --// Airshot
+                    args[3] = Plr.Character.LeftFoot.Position+(Plr.Character.LeftFoot.Velocity*PredictionValue)
+
+                else
+                    args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*PredictionValue)
+
+                end
+            else
+                    args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*PredictionValue)
+            end
+            ]]
+			if Prediction == true then
+
+				args[3] = Plr.Character[SelectedPart].Position+(Plr.Character[SelectedPart].Velocity*PredictionValue)
+
+			else
+
+				args[3] = Plr.Character[SelectedPart].Position
+
+			end
+
+			return old(unpack(args))
+		end
+		return old(...)
+	end)
+
+	game:GetService("RunService").RenderStepped:Connect(function()
+		if Settings.rewrittenmain.RESOVLER == true and Plr.Character ~= nil and enabled and Settings.rewrittenmain.Enabled then
+			if Settings.rewrittenmain.AIRSHOT == true and enabled and Plr.Character ~= nil then
+
+				if game.Workspace.Players[Plr.Name].Humanoid:GetState() == Enum.HumanoidStateType.Freefall then -- Plr.Character:WaitForChild("Humanoid"):GetState() == Enum.HumanoidStateType.Freefall
+
+					--// Airshot
+
+					--// Anchor Check
+
+					if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
+						AnchorCount = AnchorCount + 1
+						if AnchorCount >= MaxAnchor then
+							Prediction = false
+							wait(2)
+							AnchorCount = 0;
+						end
+					else
+						Prediction = true
+						AnchorCount = 0;
+					end
+
+					SelectedPart = "LeftFoot"
+
+				else
+					--// Anchor Check
+
+					if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
+						AnchorCount = AnchorCount + 1
+						if AnchorCount >= MaxAnchor then
+							Prediction = false
+							wait(2)
+							AnchorCount = 0;
+						end
+					else
+						Prediction = true
+						AnchorCount = 0;
+					end
+
+					SelectedPart = "HumanoidRootPart"
+
+				end
+			else
+
+				--// Anchor Check
+
+				if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
+					AnchorCount = AnchorCount + 1
+					if AnchorCount >= MaxAnchor then
+						Prediction = false
+						wait(2)
+						AnchorCount = 0;
+					end
+				else
+					Prediction = true
+					AnchorCount = 0;
+				end
+
+				SelectedPart = "HumanoidRootPart"
+			end
+
+		else
+			SelectedPart = "HumanoidRootPart"
+		end
+	end)
 end)
 
-UICorner_13.Parent = TextButton_6
+UICorner_13.Parent = ThuskyLock
+
+FLOGO.Name = "F LOGO"
+FLOGO.Parent = Frame
+FLOGO.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+FLOGO.BackgroundTransparency = 1.000
+FLOGO.BorderColor3 = Color3.fromRGB(255, 255, 255)
+FLOGO.Position = UDim2.new(0.269662917, 0, 0.457191765, 0)
+FLOGO.Size = UDim2.new(0, 200, 0, 50)
+FLOGO.Font = Enum.Font.LuckiestGuy
+FLOGO.Text = "FL"
+FLOGO.TextColor3 = Color3.fromRGB(147, 0, 0)
+FLOGO.TextSize = 100.000
+
+UICorner_14.Parent = FLOGO
 
 -- Scripts:
 
-local function MZUDL_fake_script() -- Frame.LocalScript 
+local function CKAOML_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	player = game.Players.LocalPlayer
@@ -247,4 +1098,4 @@ local function MZUDL_fake_script() -- Frame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MZUDL_fake_script)()
+coroutine.wrap(CKAOML_fake_script)()
