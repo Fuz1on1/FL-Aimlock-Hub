@@ -88,23 +88,23 @@ Title.TextSize = 14.000
 
 UICorner_3.Parent = Title
 
-LegitSilentAim.Name = "Earth Streamable"
+LegitSilentAim.Name = "Silent Aim"
 LegitSilentAim.Parent = Frame
 LegitSilentAim.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
 LegitSilentAim.BorderColor3 = Color3.fromRGB(255, 255, 255)
 LegitSilentAim.Position = UDim2.new(0.510112345, 0, 0.135273993, 0)
 LegitSilentAim.Size = UDim2.new(0, 200, 0, 50)
 LegitSilentAim.Font = Enum.Font.LuckiestGuy
-LegitSilentAim.Text = "Earth Silent"
+LegitSilentAim.Text = "Silent Aim"
 LegitSilentAim.TextColor3 = Color3.fromRGB(147, 0, 0)
 LegitSilentAim.TextSize = 14.000
 LegitSilentAim.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/hharu02/ssadsdasd/main/asdas"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/topillesrevenge/Streamable-Silent/main/Main"))()
 DaHoodSettings.Prediction = 0.12588
-Aiming.TargetPart = {"HumanoidRootPart", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
-Aiming.FOV = 15
+Aiming.TargetPart = {"Head", "LeftHand", "RightHand", "LeftLowerArm", "RightLowerArm", "LeftUpperArm", "RightUpperArm", "LeftFoot", "LeftLowerLeg", "UpperTorso", "HumanoidRootPart", "LeftUpperLeg", "RightLowerLeg", "RightFoot", "LowerTorso"}
+Aiming.FOV = 25
 Aiming.FOVSides = 25
-Aiming.HitChance = 194
+Aiming.HitChance = 400
 Aiming.ShowFOV = false
 end)
 
@@ -169,52 +169,29 @@ Credits.TextSize = 14.000
 
 UICorner_7.Parent = Credits
 
-Cframe.Name = "ESP"
+Cframe.Name = "Resolver"
 Cframe.Parent = Frame
 Cframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
 Cframe.BorderColor3 = Color3.fromRGB(255, 255, 255)
 Cframe.Position = UDim2.new(0.510112345, 0, 0.714041054, 0)
 Cframe.Size = UDim2.new(0, 200, 0, 50)
 Cframe.Font = Enum.Font.LuckiestGuy
-Cframe.Text = "ESP"
+Cframe.Text = "Resolver"
 Cframe.TextColor3 = Color3.fromRGB(147, 0, 0)
 Cframe.TextSize = 14.000
 Cframe.MouseButton1Down:connect(function()
-	
---- Tut
+	local RunService = game:GetService("RunService")
 
-local esp_settings = { ---- table for esp settings 
-    textsize = 10,
-    colour = 255,255,255
-}
-
-local gui = Instance.new("BillboardGui")
-local esp = Instance.new("TextLabel",gui) ---- new instances to make the billboard gui and the textlabel
-
-
-
-gui.Name = "Cracked esp"; ---- properties of the esp
-gui.ResetOnSpawn = false
-gui.AlwaysOnTop = true;
-gui.LightInfluence = 0;
-gui.Size = UDim2.new(1.75, 0, 1.75, 0);
-esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-esp.Text = ""
-esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
-esp.BorderSizePixel = 4;
-esp.BorderColor3 = Color3.new(esp_settings.colour)
-esp.BorderSizePixel = 0
-esp.Font = "GothamSemibold"
-esp.TextSize = esp_settings.textsize
-esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
-
-game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
-    for i,v in pairs (game:GetService("Players"):GetPlayers()) do
-        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then -- craeting checks for team check, local player etc
-            esp.Text = "{"..v.Name.."}"
-            gui:Clone().Parent = v.Character.Head
-    end
-end
+RunService.Heartbeat:Connect(function()
+    pcall(function()
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                local hrp = v.Character.HumanoidRootPart
+                hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)    
+                hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)   
+            end
+        end
+    end)
 end)
 end)
 
